@@ -1,0 +1,19 @@
+10 REM SIMPLE ASSEMBLY
+20 REM ********
+30 MODE 7
+40 DIM Start_of_Program% 15
+50 LET Output_letter 		= ASC("A")
+60 LET Screen_start 		= HIMEM
+70 LET Offset				= 100
+80 REM -------------------------
+90 LET p% = Start_of_Program%
+100 [OPT3
+110 .Prog 		LDA #Output_letter
+120			LDX #Offset
+130			STA Screen_start,X
+140			RTS
+150 ]
+160 REM -------------------------
+170 INPUT "Press return "A$
+180 CALL Start_of_Program%
+190 END
